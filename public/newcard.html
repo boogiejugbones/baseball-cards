@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <h2><a href="/public/homepage.html">homepage</a></h2>
+    <form>
+    <label for="name" id="name-label">
+        Enter the name:
+    </label>
+        <input id="name" type="text" required placeholder="John Doe">
+        <!--team, year, position -->
+    <label id="team-label">
+        Enter the team:
+        <input id="team" type="text" required placeholder="Colorado Rockies">
+        <!--team, year, position -->
+    </label>
+    <label id="year-label">
+        Enter the year:
+        <input id="year" type="year" required placeholder="1960">
+        <!--team, year, position -->
+    </label>
+    <label id="pos-label">
+        Select the position:
+        <!--<input id="position" type="dropdown" required placeholder="CF">
+        team, year, position -->
+            <select id="position" required>
+                <option>(Select one)</option>
+                <option>Pitcher</option>
+                <option>Catcher</option>
+                <option>First Baseman</option>
+                <option>Second Baseman</option>
+                <option>Third Baseman</option>
+                <option>Shortstop</option>
+                <option>Left Fielder</option>
+                <option>Center Fielder</option>
+                <option>Right Fielder</option>
+            </select>
+
+            <button type="submit">Add Card</button>
+    </label>
+    </form>
+    <script src="/script.js"></script>
+</body>
+</html>
