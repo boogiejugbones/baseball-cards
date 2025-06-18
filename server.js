@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'homepage.html'));
 });
 
-app.get('/api/cards', (req, res)=> {
+app.get('/api/cards', (req, res)=> {                //this gets all of the cards from the db
     try{
         const cards = db.prepare('SELECT * FROM cards').all();
         res.json(cards);
