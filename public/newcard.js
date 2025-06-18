@@ -26,3 +26,13 @@ form.addEventListener("submit", function(e) {
         console.error('Error:', error);
     });
 });
+
+const popup = document.getElementById("popup");     //for confirmation popup
+
+window.openPopup = function(){
+    popup.classList.add("open-popup");
+};
+
+window.closePopup = function(){
+    popup.classList.remove("open-popup");
+};

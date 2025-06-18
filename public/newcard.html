@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="title" class="text-2xl font-bold text-blue-600 mb-4">
+    <h1 id="title" class="title text-2xl font-bold text-blue-600 mb-4">
         <a href="/" class="no-link-style">Dad's Baseball Cards</a>
     </h1>
+    <div class="container">
     <form>
     <label for="name" id="name-label">
         Enter the name:
@@ -41,10 +42,14 @@
                 <option>Center Fielder</option>
                 <option>Right Fielder</option>
             </select>
-
-            <button type="submit">Add Card</button>
+                <button type="submit" onclick="openPopup()">Add Card</button>
+                <div class="popup" id="popup">
+                    <h2>Card added successfully.</h2>
+                    <button type="button" onclick="closePopup()">OK</button>
+                </div>
+            </div>
     </label>
     </form>
-    <script src="/newcard.js"></script>
+    <script src="/newcard.js" defer></script>
 </body>
 </html>

@@ -100,9 +100,11 @@ box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
 }
 
 .title{
-    display: flex;
-    justify-content: center;
+    width: 100%;
     text-align: center;
+    background: #3c5077;
+    margin-top:30px;
+    margin-bottom: 50px;
 }
 
 a{
@@ -126,4 +128,8 @@ a{
 a.no-link-style {
     text-decoration: none;
     color: inherit;
+}
+
+body {
+    background: #3c5077;
 }
