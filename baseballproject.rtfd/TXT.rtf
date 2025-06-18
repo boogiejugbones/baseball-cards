@@ -1,12 +1,12 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2820
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
 \f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 Menlo-Italic;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;\red246\green246\blue239;
-\red30\green31\blue41;\red124\green228\blue254;\red124\green228\blue252;\red252\green93\blue186;\red228\green242\blue113;
-\red238\green252\blue122;\red80\green93\blue147;\red72\green255\blue104;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;\cssrgb\c97255\c97255\c94902;
-\cssrgb\c15686\c16471\c21176;\cssrgb\c54510\c91373\c99608;\cssrgb\c54510\c91373\c99216;\cssrgb\c100000\c47451\c77647;\cssrgb\c91373\c94902\c51765;
-\cssrgb\c94510\c98039\c54902;\cssrgb\c38431\c44706\c64314;\cssrgb\c31373\c98039\c48235;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red246\green246\blue239;\red30\green31\blue41;
+\red124\green228\blue254;\red124\green228\blue252;\red252\green93\blue186;\red228\green242\blue113;\red238\green252\blue122;
+\red80\green93\blue147;\red72\green255\blue104;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c97255\c97255\c94902;\cssrgb\c15686\c16471\c21176;
+\cssrgb\c54510\c91373\c99608;\cssrgb\c54510\c91373\c99216;\cssrgb\c100000\c47451\c77647;\cssrgb\c91373\c94902\c51765;\cssrgb\c94510\c98039\c54902;
+\cssrgb\c38431\c44706\c64314;\cssrgb\c31373\c98039\c48235;\csgray\c0\c0;\csgray\c0;}
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -32,7 +32,8 @@ backend framework: expressjs\
 make sure API route accepts JSON not just HTML\kerning1\expnd0\expndtw0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 {{\NeXTGraphic Screenshot 2025-06-10 at 7.35.58â€¯PM.png \width15060 \height12420 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¬}\
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
 
 \itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clshdrawnil \clwWidth2652\clftsWidth3 \clheight295 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
@@ -40,7 +41,7 @@ make sure API route accepts JSON not just HTML\kerning1\expnd0\expndtw0 \
 \pard\intbl\itap1\pardeftab720\qc\partightenfactor0
 
 \f1\b \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\
 File/folder\cell 
 \pard\intbl\itap1\pardeftab720\qc\partightenfactor0
 \cf0 Purpose\cell \row
@@ -145,23 +146,23 @@ notes for practice web app: \
 used node install npmmod to use for seamless updates between file and webpage itself\
 \
 in package.json: 
-\f3 \cf4 \cb5 \strokec4   \cf6 \strokec6 "\cf7 \strokec7 name\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 practice-backend\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \cell \lastrow\row
+\f3 \cf3 \cb4   \cf5 "\cf6 name\cf5 "\cf7 :\cf3  \cf8 "\cf9 practice-backend\cf8 "\cf3 ,\cb1 \cell \lastrow\row
 \pard\pardeftab720\partightenfactor0
-\cf4 \cb5   \cf6 \strokec6 "\cf7 \strokec7 version\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 1.0.0\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 description\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 ""\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 main\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 index.js\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 scripts\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \{\cb1 \
-\cb5     \cf6 \strokec6 "\cf7 \strokec7 dev\cf6 \strokec6 "\cf8 \strokec8 :\cf9 \strokec9 "\cf10 \strokec10 nodemon server\cf9 \strokec9 "\cf4 \strokec4 ,                 \cf11 \strokec11 //every time you make a change, nodemon will restart the server\cf4 \cb1 \strokec4 \
-\cb5     \cf6 \strokec6 "\cf7 \strokec7 test\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 echo \cf8 \strokec8 \\"\cf10 \strokec10 Error: no test specified\cf8 \strokec8 \\"\cf10 \strokec10  && exit 1\cf9 \strokec9 "\cf4 \cb1 \strokec4 \
-\cb5   \},\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 keywords\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  [],\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 author\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 ""\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 license\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 ISC\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 type\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 commonjs\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \
-\cb5   \cf6 \strokec6 "\cf7 \strokec7 dependencies\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \{\cb1 \
-\cb5     \cf6 \strokec6 "\cf7 \strokec7 express\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 ^5.1.0\cf9 \strokec9 "\cf4 \strokec4 ,\cb1 \
-\cb5     \cf6 \strokec6 "\cf7 \strokec7 nodemon\cf6 \strokec6 "\cf8 \strokec8 :\cf4 \strokec4  \cf9 \strokec9 "\cf10 \strokec10 ^3.1.10\cf9 \strokec9 "\cf4 \cb1 \strokec4 \
-\cb5   \}\cb1 \
+\cf3 \cb4   \cf5 "\cf6 version\cf5 "\cf7 :\cf3  \cf8 "\cf9 1.0.0\cf8 "\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 description\cf5 "\cf7 :\cf3  \cf8 ""\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 main\cf5 "\cf7 :\cf3  \cf8 "\cf9 index.js\cf8 "\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 scripts\cf5 "\cf7 :\cf3  \{\cb1 \
+\cb4     \cf5 "\cf6 dev\cf5 "\cf7 :\cf8 "\cf9 nodemon server\cf8 "\cf3 ,                 \cf10 //every time you make a change, nodemon will restart the server\cf3 \cb1 \
+\cb4     \cf5 "\cf6 test\cf5 "\cf7 :\cf3  \cf8 "\cf9 echo \cf7 \\"\cf9 Error: no test specified\cf7 \\"\cf9  && exit 1\cf8 "\cf3 \cb1 \
+\cb4   \},\cb1 \
+\cb4   \cf5 "\cf6 keywords\cf5 "\cf7 :\cf3  [],\cb1 \
+\cb4   \cf5 "\cf6 author\cf5 "\cf7 :\cf3  \cf8 ""\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 license\cf5 "\cf7 :\cf3  \cf8 "\cf9 ISC\cf8 "\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 type\cf5 "\cf7 :\cf3  \cf8 "\cf9 commonjs\cf8 "\cf3 ,\cb1 \
+\cb4   \cf5 "\cf6 dependencies\cf5 "\cf7 :\cf3  \{\cb1 \
+\cb4     \cf5 "\cf6 express\cf5 "\cf7 :\cf3  \cf8 "\cf9 ^5.1.0\cf8 "\cf3 ,\cb1 \
+\cb4     \cf5 "\cf6 nodemon\cf5 "\cf7 :\cf3  \cf8 "\cf9 ^3.1.10\cf8 "\cf3 \cb1 \
+\cb4   \}\cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf2 then use \'93npm run dev\'94 in terminal to start app\
 \
@@ -170,15 +171,35 @@ npm install ejs\
 \
 simplecss is interesting\
 \
-{{\NeXTGraphic Screenshot 2025-06-11 at 1.23.09â€¯PM.png \width10140 \height8480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¬}\
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic Screenshot 2025-06-11 at 1.23.09â€¯PM.png \width10140 \height8480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
 \
 instead: if you hover over a card an edit button pops up that you can click, same for delete\
 \
 \pard\pardeftab720\partightenfactor0
-\cf4 \cb5 <\cf8 \strokec8 link\cf4 \strokec4  
-\f4\i \cf12 \cb5 \strokec12 href
-\f3\i0 \cf8 \cb5 \strokec8 =\cf9 \strokec9 "\cf10 \strokec10 https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css\cf9 \strokec9 "\cf4 \strokec4  
-\f4\i \cf12 \cb5 \strokec12 rel
-\f3\i0 \cf8 \cb5 \strokec8 =\cf9 \strokec9 "\cf10 \strokec10 stylesheet\cf9 \strokec9 "\cf4 \strokec4 >\cb1 \
-}
+\cf3 \cb4 <\cf7 link\cf3  
+\f4\i \cf11 href
+\f3\i0 \cf7 =\cf8 "\cf9 https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css\cf8 "\cf3  
+\f4\i \cf11 rel
+\f3\i0 \cf7 =\cf8 "\cf9 stylesheet\cf8 "\cf3 >\
+\
+\cf2 \cb12 \
+unix commands:\
+history \'91number\'92 then !whichever number\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf13 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 ssh-keygen -t rsa\
+\
+git status\
+git add -A to add all files\
+git commit -m \'91\'93name\'94\'92\
+git push origin main\
+\
+git checkout -b \'91name\'92 to create new branch\
+\
+process is git add then git commit every time\
+\
+html boilerplate command vscode: ! then \'91enter\'92}
