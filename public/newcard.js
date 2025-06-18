@@ -36,3 +36,7 @@ window.openPopup = function(){
 window.closePopup = function(){
     popup.classList.remove("open-popup");
 };
+
+form.addEventListener("submit", function(e){
+    document.getElementById("form").reset();
+});
