@@ -46,6 +46,25 @@ app.post('/api/cards', (req, res) => {
     }
 })
 
+app.delete('/api/cards/:id', (req, res) => {
+    const id = req.params.id;
+
+    try {
+        const stmt = db.prepare('DELETE FROM cards WHERE id = ?');
+        const result = stmt.run(id);
+
+        if (result.changes === 0) {
+            res.status(404).json({ error: 'Card not found' });
+        } else {
+            console.log(`Deleted card with id ${id}`);
+            res.sendStatus(204); // success
+        }
+    } catch (err) {
+        console.error('Database delete error:', err);
+        res.status(500).json({ error: 'Failed to delete card' });
+    }
+});
+
 app.listen(3000, () => {
     console.log('Server running on http://localhost:3000')
 });
