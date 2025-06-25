@@ -1,15 +1,15 @@
-const form = document.querySelector('form');
+const footballForm = document.querySelector('#football-form');
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();     //make sure page does not reload
 
     const data = {
-    playername: document.getElementById("name").value,
-    team: document.getElementById("team").value,
-    position: document.getElementById("position").value,
-    year: document.getElementById("year").value,
-    cardNumber: document.getElementById("card-number").value,
-    type: "baseball"
+    playername: document.getElementById("fname").value,
+    team: document.getElementById("fteam").value,
+    position: document.getElementById("fposition").value,
+    year: document.getElementById("fyear").value,
+    cardNumber: document.getElementById("fcard-number").value,
+    type: "football"
     //condition: document.getElementById("condition").value,
     //description: document.getElementById("description").value,
     };
