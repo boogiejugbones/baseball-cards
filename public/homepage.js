@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     let pendingDelete = {id: null, type: null, cardDiv: null};
 
     const confirmPopup = document.getElementById("confirm-delete");
+    console.log("confirmPopup is", confirmPopup);
     const confirmYes = document.getElementById("confirm-yes");
     const confirmNo = document.getElementById("confirm-no");
 
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                 const deleteButton = cardDiv.querySelector('.individual-del');
 
                 deleteButton.addEventListener('click', () =>{
+                    console.log("Delete button clicked");   //debug
                     pendingDelete.id = deleteButton.getAttribute('data-id');
                     pendingDelete.type = deleteButton.getAttribute('data-type');
                     pendingDelete.cardDiv = cardDiv;
@@ -72,7 +74,7 @@ confirmNo.addEventListener('click', () =>{
 });
 
 successClose.addEventListener('click', () =>{
-    success.Popup.classList.remove('open-popup');
+    successPopup.classList.remove('open-popup');
 });
 });
 

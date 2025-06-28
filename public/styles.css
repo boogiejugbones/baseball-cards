@@ -25,28 +25,24 @@
     border-radius:30px;
 }
 
-.popup{
-    width: 400px;
-    background:#fff;
-    border-radius: 6px;
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-    text-align: center;
-    padding: 20px;
-    color: #333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+.popup {
     display: none;
-    border: 2px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
     z-index: 1000;
-    box-shadow: 0 0 10px rbga(0, 0, 0, 0.25)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.open-popup{
+.popup.open-popup {
     display: block;
 }
+
 
 .popup h2{
 font-size: 38px;

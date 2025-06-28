@@ -81,9 +81,14 @@ app.delete('/api/cards/:id', (req, res) => {
     }
 
     try{
-        const tableName = type === 'baseball'? 'bcards' : 'fcards';     //???
+        let tableName;
+            if (type === 'baseball') {
+                tableName = 'bcards';
+            } else {
+                tableName = 'fcards';
+            }
 
-        const stmt = db.prepare('DELETE FROM ${tableName} WHERE id = ?');
+        const stmt = db.prepare(`DELETE FROM ${tableName} WHERE id = ?`);
         const result = stmt.run(id);
 
         if (result.changes === 0) {
