@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () =>{
     const container =document.getElementById("card-container");
     let pendingDelete = {id: null, type: null, cardDiv: null};
+    let pendingEdit = {id: null, type: null, cardDiv: null};
 
     const confirmPopup = document.getElementById("confirm-delete");
     console.log("confirmPopup is", confirmPopup);
@@ -29,12 +30,14 @@ document.addEventListener('DOMContentLoaded', () =>{
                         <p><strong>Year:</strong> ${card.year}</p>
                         <div class="individual-id" data-id="${card["card-number"]}">${card["card-number"]}</div>
                         <button type="button" class="individual-del" data-id="${card.id}" data-type="${card.type}">Delete</button>
+                        <button type="button" class="individual-edit" data-id="${card.id}" data-type="${card.type}">Edit</button>
                     </div>
                     `;
 
                 container.appendChild(cardDiv);
 
                 const deleteButton = cardDiv.querySelector('.individual-del');
+                const editButton = cardDiv.querySelector('.individual-edit')
 
                 deleteButton.addEventListener('click', () =>{
                     console.log("Delete button clicked");   //debug
@@ -43,6 +46,13 @@ document.addEventListener('DOMContentLoaded', () =>{
                     pendingDelete.cardDiv = cardDiv;
                     confirmPopup.classList.add('open-popup');
                 });
+
+                editButton.addEventListener('click', () =>{
+                    console.log("Edit button clicked"); //debug
+                    const id = editButton.getAttribute('data-id');
+                    const type = editButton.getAttribute('data-type');
+                    window.location.href =`/edit.html?id=${id}&type=${type}`;
+                })
             });
         })
         .catch(error => console.error('Error fetching cards', error));
