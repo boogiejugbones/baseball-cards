@@ -3,26 +3,29 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 const type = urlParams.get("type");
 
-editForm.addEventListener("submit", function(e) {
-    e.preventDefault();     //make sure page does not reload
+console.log("Editing card id:", id);
+console.log("Editing card type:", type);
+
+editForm.addEventListener('submit', function(e){
+    e.preventDefault();
 
     const data = {
     playername: document.getElementById("fname").value,
     team: document.getElementById("fteam").value,
     position: document.getElementById("fposition").value,
     year: document.getElementById("fyear").value,
-    cardNumber: document.getElementById("fcard-number").value,
+    "card-number": document.getElementById("fcard-number").value,
     type: "football"
     };
 
-    fetch(`/api/cards/${id}?type=${type}`, {
-        method: 'PUT',
+    fetch(`http://localhost:3000/api/cards/${id}?type=${type}`, {
+        method: "PUT",
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(data),
     })
-    .then(response => {
-        if(!response.ok) throw new Error("Failed to update");
-        return response.json();
+    .then(res => {
+        if(!res.ok) throw new Error("Failed to update");
+        return res.text();
     })
     .then(result => {
         console.log('Success:', result);

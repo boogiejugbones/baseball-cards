@@ -84,11 +84,15 @@ router.put('/:id', (req, res) =>{
         const fields = Object.keys(updatedData);
         const values = Object.values(updatedData);
 
-        const setClause = fields.map(field => `${field} = ?`).join(', ');
+        if(fields.length === 0){
+            return res.status(404).json({error: 'No fields to update'})
+        }
 
-        const sql = `UPDATE FROM ${tableName} SET ${setClause} WHERE id =?`;
+        const setClause = fields.map(field => `\`${field}\` = ?`).join(', ');
+
+        const sql = `UPDATE ${tableName} SET ${setClause} WHERE id =?`;
         const stmt = db.prepare(sql);
-        const result = smnt.run(id);
+        const result = stmt.run(...values,id);
 
         if (result.changes === 0) {
             res.status(404).json({ error: 'Card not found' });

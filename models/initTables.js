@@ -7,7 +7,8 @@ db.prepare(`CREATE TABLE IF NOT EXISTS bcards (
     team TEXT NOT NULL,
     position TEXT NOT NULL,
     year INTEGER NOT NULL,
-    "card-number" INTEGER NOT NULL)`).run();
+    "card-number" INTEGER NOT NULL,
+    type TEXT NOT NULL DEFAULT 'baseball')`).run();
 });
 
 const createFootballTables = db.transaction(() =>{
@@ -17,7 +18,8 @@ const createFootballTables = db.transaction(() =>{
         team TEXT NOT NULL,
         position TEXT NOT NULL,
         year INTEGER NOT NULL,
-        "card-number" INTEGER NOT NULL)`).run();
+        "card-number" INTEGER NOT NULL,
+        type TEXT NOT NULL DEFAULT 'football')`).run();
 });
 
 module.exports = () =>{
