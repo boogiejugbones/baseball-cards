@@ -51,7 +51,11 @@ document.addEventListener('DOMContentLoaded', () =>{
                     console.log("Edit button clicked"); //debug
                     const id = editButton.getAttribute('data-id');
                     const type = editButton.getAttribute('data-type');
-                    window.location.href =`/edit.html?id=${id}&type=${type}`;
+                    if(type === 'baseball'){
+                        window.location.href =`/edit-bcard.html?id=${id}&type=${type}`;
+                    }else{
+                        window.location.href =`/edit-fcard.html?id=${id}&type=${type}`;
+                    }
                 })
             });
         })

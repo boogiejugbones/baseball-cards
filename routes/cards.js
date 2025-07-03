@@ -68,4 +68,38 @@ router.delete('/:id', (req, res) => {
     }
 });
 
+router.put('/:id', (req, res) =>{
+    const id = req.params.id;
+    const type = req.query.type;
+    const updatedData  = req.body;
+
+    let tableName;
+    if(type === 'baseball'){
+        tableName = 'bcards';
+    }else{
+        tableName = 'fcards';
+    }
+
+    try{
+        const fields = Object.keys(updatedData);
+        const values = Object.values(updatedData);
+
+        const setClause = fields.map(field => `${field} = ?`).join(', ');
+
+        const sql = `UPDATE FROM ${tableName} SET ${setClause} WHERE id =?`;
+        const stmt = db.prepare(sql);
+        const result = smnt.run(id);
+
+        if (result.changes === 0) {
+            res.status(404).json({ error: 'Card not found' });
+        } else {
+            console.log(`Updated card with id ${id}`);
+            res.sendStatus(204); // success
+        }
+    } catch (err) {
+        console.error('Database update error:', err);
+        res.status(500).json({ error: 'Failed to update card' });
+    }
+})
+
 module.exports = router;

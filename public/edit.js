@@ -1,6 +1,9 @@
-const footballForm = document.querySelector('#football-form');
+const editForm = document.querySelector('#edit-form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+const type = urlParams.get("type");
 
-form.addEventListener("submit", function(e) {
+editForm.addEventListener("submit", function(e) {
     e.preventDefault();     //make sure page does not reload
 
     const data = {
@@ -10,17 +13,17 @@ form.addEventListener("submit", function(e) {
     year: document.getElementById("fyear").value,
     cardNumber: document.getElementById("fcard-number").value,
     type: "football"
-    //condition: document.getElementById("condition").value,
-    //description: document.getElementById("description").value,
     };
 
-    fetch('http://localhost:3000/api/cards', {
-        method: 'POST',
-
+    fetch(`/api/cards/${id}?type=${type}`, {
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
+    .then(response => {
+        if(!response.ok) throw new Error("Failed to update");
+        return response.json();
+    })
     .then(result => {
         console.log('Success:', result);
     })
@@ -39,6 +42,12 @@ window.closePopup = function(){
     popup.classList.remove("open-popup");
 };
 
-form.addEventListener("submit", function(e){
-    document.getElementById("form").reset();
+editForm.addEventListener("submit", function(e){
+    document.getElementById("edit-form").reset();
 });
+
+function clearForm() {
+    const form = document.getElementById("edit-form");
+    form.reset();
+    return false;
+}
