@@ -73,6 +73,11 @@ router.put('/:id', (req, res) =>{
     const type = req.query.type;
     const updatedData  = req.body;
 
+    console.log('Received update request:');
+    console.log('ID:', id);
+    console.log('Type:', type);
+    console.log('Updated data (req.body):', updatedData);
+
     let tableName;
     if(type === 'baseball'){
         tableName = 'bcards';
@@ -84,13 +89,19 @@ router.put('/:id', (req, res) =>{
         const fields = Object.keys(updatedData);
         const values = Object.values(updatedData);
 
+        console.log('Fields to update:', fields);
+        console.log('Values to update:', values);
+
         if(fields.length === 0){
             return res.status(404).json({error: 'No fields to update'})
         }
 
         const setClause = fields.map(field => `\`${field}\` = ?`).join(', ');
-
         const sql = `UPDATE ${tableName} SET ${setClause} WHERE id =?`;
+
+        console.log('SQL statement:', sql);
+        console.log('Executing with values:', [...values, id]);
+
         const stmt = db.prepare(sql);
         const result = stmt.run(...values,id);
 
@@ -103,6 +114,34 @@ router.put('/:id', (req, res) =>{
     } catch (err) {
         console.error('Database update error:', err);
         res.status(500).json({ error: 'Failed to update card' });
+    }
+})
+
+router.get('/:id', (req, res) => {              //get individual card for edit
+    const id = req.params.id;
+    const type = req.query.type;
+
+    let tableName;
+
+    if(type === 'baseball'){
+        tableName = 'bcards';
+    }
+    else{
+        tableName = 'fcards';
+    }
+
+    try {
+        const stmt = db.prepare(`SELECT * FROM ${tableName} WHERE id = ?`);
+        const card = stmt.get(id);
+
+        if(!card){
+            return res.status(404).json({error: 'Failed to fetch individual card'});
+        }
+
+        res.json(card);
+    }catch(err){
+        console.error(err);
+        res.status(500).json({error: 'Database error'});
     }
 })
 
