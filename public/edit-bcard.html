@@ -11,8 +11,49 @@
         <a href="/" class="no-link-style">Dad's Baseball Cards</a>
     </h1>
     <form id="edit-form" class="edit-form">
-    <button id="submit" class="submit">Edit</button>
+    <label for="bname" id="name-label">
+        Enter the name:
+    </label>
+        <input id="bname" type="text" required placeholder="John Doe" autocomplete="off">
+        <!--team, year, position -->
+    <label id="team-label">
+        Enter the team:
+        <input id="bteam" type="text" required placeholder="Colorado Rockies" autocomplete="off">
+        <!--team, year, position -->
+    </label>
+    <label id="year-label">
+        Enter the year:
+        <input id="byear" type="year" required placeholder="1960" autocomplete="off">
+        <!--team, year, position -->
+    </label>
+    <label id="pos-label">
+        Select the position:
+        <!--<input id="position" type="dropdown" required placeholder="CF">
+        team, year, position -->
+            <select id="bposition" required>
+                <option>(Select one)</option>
+                <option>Pitcher</option>
+                <option>Catcher</option>
+                <option>First Baseman</option>
+                <option>Second Baseman</option>
+                <option>Third Baseman</option>
+                <option>Shortstop</option>
+                <option>Left Fielder</option>
+                <option>Center Fielder</option>
+                <option>Right Fielder</option>
+            </select>
+            <label id="card-label">
+            Enter the card number:
+                <input id="bcard-number" type="number" required placeholder="101" autocomplete="off">
+            </label>
+                <button type="submit" onclick="openPopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <h2>Card edited successfully.</h2>
+                    <button type="button" onclick="closePopup()">OK</button>
+                </div>
+            </div>
+    </label>
     </form>
 </body>
-<script src="/edit.js" defer></script>
+<script src="/edit-bcard.js" defer></script>
 </html>
