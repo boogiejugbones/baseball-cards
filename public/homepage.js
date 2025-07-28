@@ -92,4 +92,15 @@ successClose.addEventListener('click', () =>{
 });
 });
 
+const search = document.getElementById('search-icon')
+const input = document.getElementById('search-input')
 
+search.addEventListener('click', () =>{
+    const playername = input.value.trim();
+
+    const url =`/api/card?playername=${encodeURIComponent(playername)}`;
+
+    fetch(url)
+        .then (res => res.json())
+
+})
